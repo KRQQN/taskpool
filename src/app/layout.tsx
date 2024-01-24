@@ -6,6 +6,7 @@ import { authOptions } from "./api/auth/[...nextauth]/route";
 import AuthProvider from "@/providers/SessionProvider";
 import Home from "./page";
 import Header from "@/components/Header";
+import NewTaskForm from "@/components/CreateNewTask/NewTaskForm";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export default async function RootLayout({
         <AuthProvider session={session}>
           <Header />
           {!session ? (
-            <h1 className="text-center m-10 text-8xl">Not logged in</h1>
+            <NewTaskForm/>
           ) : (
             <Home />
           )}
