@@ -8,11 +8,8 @@ export default function Home() {
 
   return (
     <div className="bg-black h-screen">
-      
       <h1 className="text-center text-5xl font-extrabold">{session?.data?.user?.name}</h1>
       <h1 className="text-center text-5xl font-extrabold">{session?.data?.user?.email}</h1>
-       
-      <button className="bg-lightRed border-2" onClick={() => signOut()}>Logout</button>
     </div>
   );
 }
