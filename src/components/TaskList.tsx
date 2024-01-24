@@ -3,7 +3,7 @@ import React from "react";
 import Task from "./Task";
 import { onSnapshot } from "firebase/firestore";
 import { useState, useEffect } from "react";
-import { taskCollectionRef } from "../app/firebase/collections/firestore.collections";
+import { taskCollectionRef } from "@/db/collections/firestore.collections";
 import { taskData } from "@/lib/types";
 
 const TaskList = () => {
