@@ -1,36 +1,18 @@
 "use client";
-import Header from "@/components/Header";
 import Image from "next/image";
-import { handleSignUp, handleLogin, handleLogout } from "./handlers/authHandlers";
-import { userAuth } from "./contexts/authCtx";
+import { signOut, useSession } from 'next-auth/react'
 
 export default function Home() {
-  const userInfo = userAuth();
 
-  function handleCHECK() {
-    console.log(userInfo);
-  }
+  const session = useSession();
 
   return (
     <div className="bg-black h-screen">
-      <Header />
-      {userInfo === false && <h1>LOADING.</h1>}
-
-      <button className="min-w-44 bg-red-300 h-20" onClick={() => handleSignUp({email:'newAccount@test.io',password:'password'})}>
-        CREATE
-      </button>
-      <button className="min-w-44 bg-red-300 h-20" onClick={() => handleLogin({email:'email@test.com',password:'password'})}>
-        LÅGIN
-      </button>
-      <button className="min-w-44 bg-green-600-300 h-20" onClick={handleCHECK}>
-        CHECK
-      </button>
-      <button
-        className="min-w-44 bg-fuchsia-500-600-300 h-20"
-        onClick={handleLogout}
-      >
-        UUUUUT
-      </button>
+      
+      <h1 className="text-center text-5xl font-extrabold">{session?.data?.user?.name}</h1>
+      <h1 className="text-center text-5xl font-extrabold">{session?.data?.user?.email}</h1>
+       
+      <button className="bg-lightRed border-2" onClick={() => signOut()}>Logout</button>
     </div>
   );
 }
