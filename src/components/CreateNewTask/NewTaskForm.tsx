@@ -1,8 +1,10 @@
 "use client";
 import { addData } from "@/actions/addTask";
-import Dropdown from "./Dropdown";
 import { useRef } from "react";
+import Dropdown from "./Dropdown";
+import EmailInput from "./EmailInput";
 import SubmitBtn from "./SubmitBtn";
+import TextAreaInput from "./TextAreaInput";
 
 const NewTaskForm = () => {
   const ref = useRef<HTMLFormElement>(null);
@@ -16,28 +18,9 @@ const NewTaskForm = () => {
         console.log(addData(formData));
       }}
     >
-      <div className="flex flex-col my-2">
-        <h1 className="text-center mb-5 text-2xl">
-          What can we help you with?
-        </h1>
-        <label htmlFor="email">Email</label>
-        <input
-          className="text-black m-1 border-2"
-          type="text"
-          name="data"
-          id="email"
-        />
-      </div>
+      <EmailInput />
       <Dropdown />
-      <textarea
-        className="border-2 border-red-600 my-4"
-        name="data"
-        id="desc"
-        cols={30}
-        rows={5}
-        style={{ resize: "none" }}
-      ></textarea>
-
+      <TextAreaInput />
       <SubmitBtn />
     </form>
   );

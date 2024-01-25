@@ -41,7 +41,7 @@ const DisplaySelection = ({ selectedItem }: DisplaySelectionProps) => {
     <input
       type="text"
       name="data"
-      className="text-black rounded-l-md bg-lightPink self-center px-2 shadow-md"
+      className="text-black rounded-l-md bg-lightPink self-center px-2 shadow-md focus:outline-none"
       value={selectedItem || "Select category"}
       readOnly
     />
