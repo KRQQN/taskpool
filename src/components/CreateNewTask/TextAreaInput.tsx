@@ -2,8 +2,7 @@ const TextAreaInput = () => {
   return (
     <textarea
       className="my-4 text-black focus:outline-none"
-      name="data"
-      id="desc"
+      name="description"
       cols={30}
       rows={5}
       style={{ resize: "none" }}

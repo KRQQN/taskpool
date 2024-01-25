@@ -40,7 +40,7 @@ const DisplaySelection = ({ selectedItem }: DisplaySelectionProps) => {
   return (
     <input
       type="text"
-      name="data"
+      name="category"
       className="text-black rounded-l-md bg-lightPink self-center px-2 shadow-md focus:outline-none"
       value={selectedItem || "Select category"}
       readOnly
@@ -60,8 +60,9 @@ const SelectOverlay = ({ handleChange, selectedItem }: SelectOverlayProps) => {
       onChange={handleChange}
       value={selectedItem}
     >
-      <option value="item1">Item 1</option>
-      <option value="item2">Item 2</option>
+      <option value="category 1">Category 1</option>
+      <option value="category 2">Category 2</option>
+      <option value="category 3">Category 3</option>
     </select>
   );
 };

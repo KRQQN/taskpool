@@ -6,8 +6,7 @@ const EmailInput = () => {
       <input
         className="text-black m-1 focus:outline-none"
         type="text"
-        name="data"
-        id="email"
+        name="email"
       />
     </div>
   );
