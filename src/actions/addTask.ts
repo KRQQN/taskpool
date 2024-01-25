@@ -1,7 +1,13 @@
 'use server'
+import { db } from "@/db/firebase";
+import { collection, addDoc } from "firebase/firestore"; 
 
 export const addData = async (formData: FormData) => {
-  // Create new taskObject and add to database from here
-  const data = formData.getAll('data');
-  console.log(data)
+
+  const docRef = await addDoc(collection(db, "tasks"), {
+    email: formData.get('email'),
+    category: formData.get('category'),
+    description: formData.get('description')
+  });
+  console.log("Task created with id: ", docRef.id);
 }
