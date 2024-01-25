@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
 import AuthProvider from "@/providers/SessionProvider";
 import Home from "./page";
 import Header from "@/components/Header";
 import NewTaskForm from "@/components/CreateNewTask/NewTaskForm";
+import { authOptions } from "@/lib/authProviderConfig";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
